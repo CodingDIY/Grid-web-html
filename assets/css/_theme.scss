@@ -1,0 +1,63 @@
+/* Dark - Light Theme Var */
+$my-colors: () !default;
+$my-colors: map-merge(
+  (
+    "brand-color": $brand-color,
+    "brand-color-dark": $brand-color-dark,
+    "brand-color-light": $brand-color-light,
+    "red-color": $red-color,
+    "red-color-dark": $red-color-dark,
+    "blue-color": $blue-color,
+    "blue-color-dark": $blue-color-dark,
+    "grey-color": $grey-color,
+    "grey-color-dark": $grey-color-dark,
+    "dark-color": $dark-color,
+    "dark-color-light": $dark-color-light,
+    "light-color": $light-color,
+    "light-color-grey": $light-color-grey,
+    "white": $white,
+    "black": $black,
+    "blue-grey-color": $blue-grey-color
+  ),
+  $my-colors
+);
+
+@function compose-color-var($color-key) {
+  @return '--#{$color-key}';
+}
+
+:root {
+  @each $color_name, $color in $my-colors {
+    #{compose-color-var($color_name)}: #{$color};
+  }
+}
+
+html {
+  --bg-color: var(--light-color);
+  --text-color: var(--dark-color-light);
+  --bg-footer-color: var(--light-color-grey);
+  --slick-arrow-color: var(--red-color-dark);
+  --black-white: var(--black);
+  --bg-navbar-color: var(--light-color);
+  --bg-jumbotron-color: var(--blue-grey-color);
+  --bg-blue-color: var(--blue-color);
+}
+
+html[data-theme="dark"] {
+  --bg-color: var(--dark-color-light);
+  --text-color: var(--light-color-grey);
+  --bg-footer-color: var(--dark-color);
+  --slick-arrow-color: var(--red-color);
+  --black-white: var(--white);
+  --bg-navbar-color: var(--light-color-grey);
+  --bg-jumbotron-color: var(--grey-color);
+  --bg-blue-color: var(--blue-color-dark);
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}

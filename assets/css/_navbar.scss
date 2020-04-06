@@ -1,0 +1,13 @@
+/* Navbar Styles */
+nav#primary-nav {
+  background-color: var(--bg-navbar-color) !important;
+  box-shadow: $z-depth-1-half;
+
+  ul.navbar-nav {
+    li {
+      a {
+        font-family: 'Noto Sans', sans-serif !important;
+      }
+    }
+  }
+}

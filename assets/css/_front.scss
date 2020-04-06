@@ -1,0 +1,145 @@
+/* Top Section */
+#top {
+  .top-slide {
+    img {
+      width: 70vw;
+      height: 50vh;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+#grid {
+  .container {
+    .row.grids {
+      display: grid;
+      grid-gap: 0.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(5, minmax(250px, 1fr));
+      grid-template-areas: 
+        'grid-1 grid-1 grid-2'
+        'grid-1 grid-1 grid-5'
+        'grid-3 grid-4 grid-5'
+        'grid-6 grid-8 grid-8'
+        'grid-7 grid-8 grid-8';
+
+      .grid {
+        // border: 1px solid red;
+        // padding: 1rem;
+        transition: all 0.5s ease-in;
+
+        &:hover {
+          box-shadow: $z-depth-1-half;
+        }
+      }
+
+      .grid-1 {
+        grid-area: grid-1;
+
+        .carousel-item {
+          @include carouselItems;
+        }
+      }
+
+      .grid-2 {
+        grid-area: grid-2;
+        @include backgrounds($size: 45%, $x: right, $y: bottom);
+        // background-color: #205c96;
+        background-color: $blue-color-dark;
+        // color: white;
+        color: $white;
+
+        a {
+          // @include aLink(white);
+          @include aLink($white);
+        }
+      }
+
+      .grid-3 {
+        grid-area: grid-3;
+        @include backgrounds($size: 45%, $x: right, $y: bottom);
+        // background-color: #d1c3b8;
+        background-color: $brand-color-light;
+        // color: black;
+        color: $black;
+
+        a {
+          @include aLink();
+        }
+      }
+
+      .grid-4,
+      .grid-6,
+      .grid-7 {
+        @include backgrounds($size: 45%, $x: right, $y: bottom);
+      }
+
+      .grid-4 {
+        grid-area: grid-4;
+        // background-color: #2196f3;
+        // color: white;
+        background-color: $blue-color;
+        color: $white;
+
+        a {
+          // @include aLink(white);
+          @include aLink($white);
+        }
+      }
+
+      .grid-5 {
+        grid-area: grid-5;
+        @include backgrounds($size: 55%, $x: right, $y: bottom);
+        // background-color: #6c757d;
+        // color: white;
+        background-color: $grey-color-dark;
+        color: $white;
+
+        a {
+          // @include aLink(white);
+          @include aLink($white);
+        }
+      }
+
+      .grid-6 {
+        grid-area: grid-6;
+        // background-color: #5f6061;
+        // color: white;
+        background-color: $brand-color;
+        color: $white;
+
+        a {
+          // @include aLink(white);
+          @include aLink($white);
+        }
+      }
+
+      .grid-7 {
+        grid-area: grid-7;
+        // background-color: #3f3f3f;
+        // color: white;
+        background-color: $brand-color-dark;
+        color: $white;
+
+        a {
+          // @include aLink(white);
+          @include aLink($white);
+        }
+      }
+
+      .grid-8 {
+        grid-area: grid-8;
+
+        .carousel-item {
+          @include carouselItems;
+        }
+      }
+    }
+  }
+}

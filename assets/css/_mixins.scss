@@ -1,0 +1,68 @@
+/* Mixin Codes */
+// link Mixins
+// @mixin aLink($linkColor: black) {
+@mixin aLink($linkColor: $black) {
+  color: $linkColor;
+  text-decoration: none;
+}
+
+// Background Mixin
+@mixin backgrounds($size: cover, $x: center, $y: center, $repeat: no-repeat, $attachment: scroll) {
+  background-size: $size;
+  background-position-x: $x;
+  background-position-y: $y;
+  background-repeat: $repeat;
+  background-attachment: $attachment;
+}
+
+// Carousel Items Mixin
+@mixin carouselItems {
+  @include backgrounds();
+  height: 70vh;
+
+  .overlay {
+    // background-color: rgba(96, 125, 139, 0.35);
+    background-color: $rgba-blue-grey-light;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    h1.display-4 {
+      // color: white;
+      color: $white;
+    }
+  }
+}
+
+// Media Query Mixins
+@mixin mediaXs {
+  @media screen and (max-width: 575px) {
+    @content;
+  }
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mediaMd {
+  @media screen and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin mediaLg {
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin mediaXl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

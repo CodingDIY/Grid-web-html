@@ -1,0 +1,13 @@
+#banner {
+  .jumbotron {
+    background-color: var(--bg-jumbotron-color);
+    color: $black;
+  }
+}
+
+aside {
+  .card-body {
+    background-color: var(--bg-blue-color);
+    color: $white;
+  }
+}

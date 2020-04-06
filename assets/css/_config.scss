@@ -1,0 +1,15 @@
+/* Config Styles */
+body {
+  // font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Serif', serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  .section-content {
+    padding: 3rem 0;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}
